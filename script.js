@@ -1,21 +1,5 @@
 const products = document.getElementById('products')
-const url = 'http://localhost:3000/products/'
-
-// const createProduct = (response.data) => {
-//     const {name, price, description} = response.data[0]
-    
-//     const productDiv = document.createElement('div')
-//     const productTitle = document.createElement('h3')
-//     const productPrice = document.createElement('h4')
-//     const productDescription = document.createElement('h6')
-
-//     productTitle.innerText = name
-//     productPrice.innerText = price
-//     productDescription.innerText = description
-
-//     productDiv.appendChild(productTitle, productPrice, productDescription)
-//     products.appendChild(productDiv)
-// }
+const url = 'https://catalognodejs2022.vercel.app/products/'
 
 const getProducts = () => {
     axios.get(url)
