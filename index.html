@@ -7,20 +7,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Water+Brush&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>CARDÁPIO</title>
 </head>
 <body>
+    <header>
+        <img src="./images/genius.png" alt="logo">
+        <i class='bx bx-cart' >
+            <h6>12</h6>
+        </i>
+    </header>
     <main>
-        
-        <h1>CARDÁPIO</h1>
-        
+        <h1>Cardápio</h1>
+
+        <div id="filters">
+            <button class="active">Tudo</button>
+            <button>Lanches</button>
+            <button>Porções</button>
+            <button>Bebidas</button>
+            <button>Sobremesas</button>
+        </div>
         
         <div id="products"></div>
         
-        
     </main>
+    
+    <footer>
+        <h3>R$ 34.57</h3>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
