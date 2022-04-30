@@ -154,11 +154,9 @@ const createWhatsLink = () => {
     `
 
     const url = urlHeader + urlItems + urlTotal + urlPix
-    console.log(url);
 
     btnCloseOrder.parentElement.href = url
     btnCloseOrder.parentElement.target = '_blank'
-    console.log(btnCloseOrder.parentElement.href );
 }
 
 const countItemsCart = () => {
@@ -172,7 +170,6 @@ const countItemsCart = () => {
 
 const toggleAside = () => {
     let state = aside.style.display
-    console.log(state);
     if (state === 'none') {
         aside.style.display = 'flex'
         main.style.display = 'none'
