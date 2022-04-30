@@ -46,7 +46,7 @@ body {
     background-position: center;
     background-repeat: repeat;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
 }
@@ -111,7 +111,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 1em;
 }
 
@@ -217,6 +217,43 @@ main h1 {
 .product button:hover {
     transform: scale(1.1);
     transition: 0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+    .product {
+        width: 100%;
+        height: 36px;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0.2em 0.2em 0.2em 0;
+        overflow: hidden;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .product img {
+        width: 70px;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .product h3{
+        font-size: 0.9em;
+    }
+
+    .product h4 {
+        margin: 0.5em;
+        width: 20%;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    .product h6{
+        display: none;
+    }
+
+    .product button {
+        height: 90%;
+    }
 }
 
 footer {
