@@ -1,12 +1,15 @@
 const products = document.getElementById('products')
 const url = 'https://catalognodejs2022.vercel.app/products/'
 const cart = document.getElementById('aside-position')
+const aside = document.getElementById('cart')
+const main = document.getElementById('main')
 const itemsCart = {}
 let totalValue = 0
 let cartCount = document.getElementById('cart-count')
 let itemsCount = 0
 const totalValueElement = document.getElementById('total-value')
 const btnCloseOrder = document.getElementById('close-order')
+const cartIcon = document.getElementsByClassName('bx-cart')[0]
 
 const getProducts = async () => {
     products.innerText = "CARREGANDO..."
@@ -143,7 +146,7 @@ const createWhatsLink = () => {
     })
 
     const urlTotal = `
-        %0a*TOTAL:%20R$%20${totalValue}*%20%20%0a%0a
+        %0a*TOTAL:%20R$%20${totalValue.toFixed(2)}*%20%20%0a%0a
     `
 
     const urlPix = `
@@ -166,5 +169,19 @@ const countItemsCart = () => {
 
     cartCount.innerText = itemsCount
 }
+
+const toggleAside = () => {
+    let state = aside.style.display
+    console.log(state);
+    if (state === 'none') {
+        aside.style.display = 'flex'
+        main.style.display = 'none'
+    } else {
+        aside.style.display = 'none'
+        main.style.display = 'flex'
+    }
+}
+
+cartIcon.addEventListener('click', toggleAside)
 
 getProducts()

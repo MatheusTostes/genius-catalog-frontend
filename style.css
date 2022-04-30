@@ -403,6 +403,15 @@ aside hr{
 @media only screen and (max-width: 1024px) {
     aside {
         display: none;
+        width: 100vw;
+        position:relative;
+        /* z-index: 99; */
+    }
+    
+    #aside-position {
+        position: fixed;
+        width: 100vw;
+        /* z-index: 99; */
     }
 }
 
