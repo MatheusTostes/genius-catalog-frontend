@@ -4,6 +4,7 @@ const cart = document.getElementById('aside-position')
 const itemsCart = {}
 let totalValue = 0
 const totalValueElement = document.getElementById('total-value')
+const btnCloseOrder = document.getElementById('close-order')
 
 const getProducts = async () => {
     products.innerText = "CARREGANDO..."
@@ -83,6 +84,8 @@ const createItemCart = () => {
     cart.insertAdjacentHTML( 'beforeend', items )
 
     calculateTotalValue()
+
+    btnCloseOrder.addEventListener('click', createWhatsLink())
 }
 
 const plusItem = (event) => {
@@ -119,6 +122,35 @@ const calculateTotalValue = () => {
         totalValue += itemValue
     })
     totalValueElement.innerText = `R$ ${totalValue.toFixed(2)}`
+}
+
+const createWhatsLink = () => {
+    const urlHeader = `
+        https://api.whatsapp.com/send?phone=5527998851973&text=
+        *COMANDA*%20%0a`
+    let urlItems = ''
+    
+    Object.keys(itemsCart).forEach((item) => {
+        const qty = itemsCart[item].qty
+        const name = itemsCart[item].name
+
+        urlItems += `${qty}x%20-%20_${name}_%20%0a`
+    })
+
+    const urlTotal = `
+        %0a*TOTAL:%20R$%20${totalValue}*%20%20%0a%0a
+    `
+
+    const urlPix = `
+        _chave%20pix%20(celular):%2027%2099885-1973_
+    `
+
+    const url = urlHeader + urlItems + urlTotal + urlPix
+    console.log(url);
+
+    btnCloseOrder.parentElement.href = url
+    btnCloseOrder.parentElement.target = '_blank'
+    console.log(btnCloseOrder.parentElement.href );
 }
 
 getProducts()
