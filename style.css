@@ -47,7 +47,7 @@ body {
     background-position: center;
     background-repeat: repeat;
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
 }
 
@@ -62,13 +62,19 @@ body {
 
 .bx-cart {
     top: 10px;
-    right: 10px;
+    right: 35%;
     position: fixed;
     padding: 5px;
     font-size: 1.5em;
     color: var(--white);
     cursor: pointer;
     z-index: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bx-cart {
+       right: 10px;
+   }
 }
 
 .bx-cart:hover {
@@ -112,6 +118,7 @@ main {
     align-items: center;
     /* justify-content: center; */
     gap: 1em;
+    overflow-y: scroll;
 }
 
 main h1 {
@@ -271,10 +278,14 @@ aside {
     position: fixed;
     /* left: 0px; */
     width: 35%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    overflow-y: scroll;
+    margin-bottom: 10em;
+    padding-bottom: 10em;
 }
 
 aside h1 {
@@ -283,10 +294,14 @@ aside h1 {
 }
 
 .item-cart {
+    padding: 0 2em;
+    /* background-color: rgb(243, 243, 243); */
+    border-radius: 40px;
     width: 70%;
     display: flex;
     align-items: center;
     transition: 0.3s;
+    box-shadow: 0 5px 6px rgba(255, 136, 0, 0.123);
 }
 
 .item-cart:hover {
@@ -330,8 +345,9 @@ aside h1 {
     width: auto;
 }
 
-.item-cart button {
+.plus-item, .minus-item {
     background-color: transparent;
+    padding: 0.3em;
     border: none;
     color: var(--secondary-color);
     font-size: 1.3em;
@@ -341,9 +357,28 @@ aside h1 {
     text-align: center;
 }
 
-.item-cart button:hover {
+.plus-item:hover, .minus-item:hover {
     transform: scale(1.5);
     transition: 0.6s;
+}
+
+.item-delete {
+    padding: 1em;
+    font-size: 0.7em;
+    position: relative;
+    /* top: 1em; */
+    border: none;
+    color: red;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 0.7s;
+}
+
+.item-delete:hover {
+    transform: scale(1.7);
+    transition: 0.3s;
 }
 
 .total-item-value {
@@ -352,6 +387,7 @@ aside h1 {
     align-items: center;
     justify-content: center;
     gap: 0.5em;
+    flex-wrap: wrap;
 }
 
 .total-item-value h4 {

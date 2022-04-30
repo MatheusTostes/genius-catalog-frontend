@@ -13,12 +13,13 @@
     <title>Genius Cardápio</title>
 </head>
 <body>
-    <img src="./images/genius.png" id="logo" alt="logo">
-    <i class='bx bx-cart' >
-        <h6>12</h6>
-    </i>
     
     <main>
+        <img src="./images/genius.png" id="logo" alt="logo">
+        <i class='bx bx-cart' >
+            <h6>12</h6>
+        </i>
+
         <h1>Cardápio</h1>
 
         <div id="filters">
@@ -36,12 +37,13 @@
     <aside id="cart">
         <div id="aside-position">
             <h1>Minha sacola</h1>
-            <div class="item-cart">
+          
+            <!-- <div class="item-cart">
                 <div class="cart-image">
                     <img src="./images/chocotone.jpg" alt="">
                 </div>
                 <div class="item-text">
-                    <h3>Chocotone</h3>
+                    <h3 class="item-name">Chocotone</h3>
                     <h5>Quantidade:</h5>
                     <div class="qty">
                         <button class="minus-item">-</button>
@@ -51,33 +53,16 @@
                 </div>
                 <div class="total-item-value">
                     <h5>Total: </h5>
-                    <h4>R$ 34,57</h4>
+                    <h4 class="total-item-price">R$ 34,57</h4>
                 </div>
-            </div>
-            <hr>
-            <div class="item-cart">
-                <div class="cart-image">
-                    <img src="./images/chocotone.jpg" alt="">
-                </div>
-                <div class="item-text">
-                    <h3>Chocotone</h3>
-                    <h5>Quantidade:</h5>
-                    <div class="qty">
-                        <button class="minus-item">-</button>
-                        <h5>3</h5>
-                        <button class="plus-item">+</button>
-                    </div>
-                </div>
-                <div class="total-item-value">
-                    <h5>Total: </h5>
-                    <h4>R$ 34,57</h4>
-                </div>
-            </div>
+                <button class="item-delete">X</button>
+            </div> -->
+ 
         </div>
     </aside>
     
     <footer>
-        <h3>R$ 34.57</h3>
+        <h3 id="total-value">R$ 00.00</h3>
     </footer>
     <script src="script.js"></script>
 </body>
