@@ -3,6 +3,8 @@ const url = 'https://catalognodejs2022.vercel.app/products/'
 const cart = document.getElementById('aside-position')
 const itemsCart = {}
 let totalValue = 0
+let cartCount = document.getElementById('cart-count')
+let itemsCount = 0
 const totalValueElement = document.getElementById('total-value')
 const btnCloseOrder = document.getElementById('close-order')
 
@@ -86,6 +88,9 @@ const createItemCart = () => {
     calculateTotalValue()
 
     btnCloseOrder.addEventListener('click', createWhatsLink())
+
+    countItemsCart()
+
 }
 
 const plusItem = (event) => {
@@ -151,6 +156,15 @@ const createWhatsLink = () => {
     btnCloseOrder.parentElement.href = url
     btnCloseOrder.parentElement.target = '_blank'
     console.log(btnCloseOrder.parentElement.href );
+}
+
+const countItemsCart = () => {
+    itemsCount = 0
+    Object.keys(itemsCart).forEach((item) => {
+        itemsCount += itemsCart[item].qty
+    })
+
+    cartCount.innerText = itemsCount
 }
 
 getProducts()
