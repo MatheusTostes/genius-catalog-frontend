@@ -38,6 +38,7 @@ html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -48,7 +49,6 @@ body {
     width: 100%;
     /* height: 100vh; */
     display: flex;
-    flex-direction: column;
 }
 
 #logo {
@@ -101,13 +101,12 @@ body {
 
 main {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     padding-bottom: 30vh;
     /* background-color: rgba(0, 0, 0, 0.863); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* background-size: cover; */
-    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,6 +252,120 @@ main h1 {
 
     .product button {
         height: 90%;
+    }
+}
+
+aside {
+    /* position: fixed; */
+    width: 50%;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0 0 10px black;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid var(--secondary-color);
+}
+
+#aside-position {
+    position: fixed;
+    /* left: 0px; */
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+aside h1 {
+    margin: 1em;
+    color: var(--secondary-color);
+}
+
+.item-cart {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.item-cart:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.cart-image img{
+    width: 4em;
+    height: 4em;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(44, 44, 44);
+}
+
+.item-text {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.item-cart h5 {
+    font-weight: 300;
+}
+
+.item-text h3, .item-text  h5{
+    width: 100%;
+    text-align: center;
+}
+
+.qty {
+    width: 100%;
+    display: flex;
+    gap: 0.7em;
+    justify-content: center;
+    align-items: center;
+}
+
+.qty h5 {
+    width: auto;
+}
+
+.item-cart button {
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.3em;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 1s;
+    text-align: center;
+}
+
+.item-cart button:hover {
+    transform: scale(1.5);
+    transition: 0.6s;
+}
+
+.total-item-value {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.total-item-value h4 {
+    color: var(--secondary-color);
+}
+
+aside hr{
+    width: 60%;
+    border-top:1px solid rgb(190, 190, 190);
+}
+
+@media only screen and (max-width: 1024px) {
+    aside {
+        display: none;
     }
 }
 
