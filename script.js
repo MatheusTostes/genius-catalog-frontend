@@ -143,7 +143,8 @@ const minusItem = (event) => {
 }
 
 const deleteItem = (event) => {
-    const itemName = event.target.parentElement.parentElement.querySelector('.item-name').innerText;
+    const itemName = event.target.parentElement.querySelector('.item-name').innerText;
+    // console.log(event.target.parentElement);
     itemsCart[itemName].qty = 0
 
     delete itemsCart[itemName]
