@@ -1,3 +1,4 @@
+let response = {}
 const products = document.getElementById('products')
 const url = 'https://catalognodejs2022.vercel.app/products/'
 const cart = document.getElementById('aside-position')
@@ -11,12 +12,39 @@ const totalValueElement = document.getElementById('total-value')
 const btnCloseOrder = document.getElementById('close-order')
 const cartIcon = document.getElementsByClassName('bx-cart')[0]
 
-const getProducts = async () => {
-    products.innerText = "CARREGANDO..."
-    const response = await axios.get(url)
+const btnAll = document.getElementById("all-filter")
+const btnLunchs = document.getElementById("lunchs-filter")
+const btnPortions = document.getElementById("portions-filter")
+const btnDrinks = document.getElementById("drinks-filter")
+const btnDesserts = document.getElementById("desserts-filter")
+
+const getApi = async () => {
+    const responseFull = await axios.get(url)
+    response = responseFull.data
+
+    return response
+}
+
+const filterProducts = (event) => {
+    if (event.target.name === 'tudo') {
+        populateItems(response)
+        return
+    }
+
+    let indexFiltered = response.filter((item) => {return item.category === event.target.name})
+    populateItems(indexFiltered)
+} 
+
+btnAll.addEventListener('click', filterProducts)
+btnLunchs.addEventListener('click', filterProducts)
+btnPortions.addEventListener('click', filterProducts)
+btnDrinks.addEventListener('click', filterProducts)
+btnDesserts.addEventListener('click', filterProducts)
+
+const populateItems = async (itemsList) => {
     products.innerText = ""
-    response.data.map((item) => {
-        
+
+    await itemsList.map((item) => {
         const productImage = document.createElement('img')
         const productDiv = document.createElement('div')
         const productTitle = document.createElement('h3')
@@ -181,4 +209,9 @@ const toggleAside = () => {
 
 cartIcon.addEventListener('click', toggleAside)
 
-getProducts()
+window.onload = async () => {
+    await getApi()
+    await populateItems(response)
+}
+
+// getProducts()
