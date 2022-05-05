@@ -25,13 +25,25 @@ const getApi = async () => {
     return response
 }
 
+const toggleActive = (event) => {
+    btnAll.classList.remove('active')
+    btnLunchs.classList.remove('active')
+    btnPortions.classList.remove('active')
+    btnDrinks.classList.remove('active')
+    btnDesserts.classList.remove('active')
+    
+    event.target.classList.add('active')
+}
+
 const filterProducts = (event) => {
     if (event.target.name === 'tudo') {
+        toggleActive(event)
         populateItems(response)
         return
     }
-
+    
     let indexFiltered = response.filter((item) => {return item.category === event.target.name})
+    toggleActive(event)
     populateItems(indexFiltered)
 } 
 
