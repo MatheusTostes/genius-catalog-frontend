@@ -95,9 +95,22 @@ const getItem = (event) => {
     itemsCart[itemObj.name] = itemObj
 
     createItemCart()
+
 }
 
+// const attLocalStorage = () => {
+//     // itemsCart
+//     localStorage.setItem('cart', JSON.stringify(itemsCart))
+// }
+
+// const getLocalStorage = () => {
+//     itemsCart = localStorage.getItem('cart')
+// }
+
 const createItemCart = () => {
+
+    // attLocalStorage()
+
     let items = ''
     Object.keys(itemsCart).forEach((itemName) =>{
         const {image, name, qty, price} = itemsCart[itemName]
@@ -225,6 +238,5 @@ cartIcon.addEventListener('click', toggleAside)
 window.onload = async () => {
     await getApi()
     await populateItems(response)
+    // await getLocalStorage()
 }
-
-// getProducts()
